@@ -21,7 +21,7 @@ const images = [
   },
   {
     src: img2,
-    alt: "Rishikesh Ganga Aarti",
+    alt: "ishikesh Ganga Aarti",
     title: "Rishikesh Ganga Aarti",
     description: "Divine evening ceremony on the banks of Mother Ganga"
   },
