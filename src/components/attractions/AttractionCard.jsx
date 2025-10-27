@@ -47,7 +47,7 @@ export default function AttractionCard({ attraction }) {
 
         {attraction.highlight && (
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider">highlight</h4>
+            <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider">Highlight</h4>
             <p className="text-gray-600 text-sm leading-relaxed">{attraction.highlight}</p>
           </div>
         )}
