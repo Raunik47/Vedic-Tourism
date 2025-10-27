@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Custom Swiper Styles for Smaller Carousel */
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  transform: scale(1.1);
+}
+
+.swiper-progress-bar {
+  width: 100%;
+  animation: progress 4s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Custom navigation arrow styles */
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Smooth fade transitions */
+.swiper-slide {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+/* Optimize video rendering */
+video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
