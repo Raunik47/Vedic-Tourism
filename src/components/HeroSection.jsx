@@ -177,74 +177,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Updated for dark background */}
-      {/* <motion.div
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm text-white/80 mb-3 font-light tracking-wider">Scroll to Explore</span>
-          <div className="relative">
-            <motion.div
-              className="w-12 h-12 border-2 border-white/30 rounded-full flex items-center justify-center backdrop-blur-sm"
-              animate={{
-                borderColor: ["rgba(255,255,255,0.3)", "rgba(245, 158, 11, 0.6)", "rgba(255,255,255,0.3)"],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              Animated arrow
-              <motion.div
-                className="flex flex-col items-center"
-                animate={{ y: [0, 4, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <svg
-                  className="w-5 h-5 text-amber-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
-              </motion.div>
-            </motion.div>
-
-            Pulsing dot effect
-            <motion.div
-              className="absolute inset-0 border-2 border-amber-400 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.5, 0, 0.5],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
-        </div>
-      </motion.div> */}
-
-      {/* Loading fallback for video */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-orange-800 to-yellow-800 flex items-center justify-center z-0">
-        <div className="text-white text-xl">Loading...</div>
-      </div> */}
+     
     </section>
   );
 }
