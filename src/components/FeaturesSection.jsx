@@ -21,7 +21,7 @@ const features = [
   {
     icon: "🛡️",
     title: "Safety & Comfort",
-    description: "Well-planned itineraries with medical support and emergency services with nearby hospitals"
+    description: "Well-planned itineraries with medical support and emergency services with nearby"
   }
 ];
 
