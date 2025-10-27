@@ -24,7 +24,7 @@ export default function About() {
               Our Sacred Mission
             </h1>
             <p className="text-xl md:text-2xl text-gray-200">
-              Connecting souls to India's spiritual heritage through mindful journeys
+              Connecting Souls to India's spiritual heritage through mindful journeys
             </p>
           </motion.div>
         </div>
