@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function AttractionCard({ attraction }) {
   return (
     <motion.div
-      className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+      className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full flex flex-col"
       whileHover={{ y: -8 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -37,7 +37,7 @@ export default function AttractionCard({ attraction }) {
       </div>
 
       {/* Content with Improved Layout */}
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4 flex-grow flex flex-col">
         {attraction.significance && (
           <div className="space-y-2">
             <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider">Significance</h4>
