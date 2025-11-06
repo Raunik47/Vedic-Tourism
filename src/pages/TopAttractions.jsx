@@ -8,7 +8,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import AttractionCard from '../components/attractions/AttractionCard';
 import EventCard from '../components/attractions/EventCard';
-import ServicesGrid from '../components/attractions/ServicesGrid';
 import DarshanPooja from '../components/attractions/DarshanPooja';
 import { images } from '../assets';
 
@@ -83,20 +82,7 @@ const events = [
   }
 ];
 
-const boatingImages = [
-  {
-    id: 1,
-    url: images.varanasi,
-    title: "Sunrise Boat Ride",
-    description: "Experience the magical morning on the Ganges"
-  },
-  {
-    id: 2,
-    url: images.manikarnikaGhat,
-    title: "Evening Boat Ride",
-    description: "Witness the mesmerizing Ganga Aarti from the river"
-  }
-];
+
 
 export default function TopAttractions() {
   return (
@@ -159,37 +145,26 @@ export default function TopAttractions() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex"  {/* Add flex to ensure consistent height */}
               >
                 <AttractionCard attraction={attraction} />
               </motion.div>
             ))}
+            {/* Add invisible placeholder items to maintain grid layout */}
+            {attractions.length % 3 !== 0 && (
+              <>
+                <motion.div className="hidden lg:block" style={{ visibility: 'hidden' }} />
+                {attractions.length % 3 === 1 && (
+                  <motion.div className="hidden lg:block" style={{ visibility: 'hidden' }} />
+                )}
+              </>
+            )}
           </div>
         </div>
       </section>
 
       {/* Darshan & Pooja Section */}
       <DarshanPooja />
-
-      {/* Programs and Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Programs and <span className="text-orange-600">Services</span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Discover our curated spiritual experiences and offerings
-            </p>
-          </motion.div>
-
-          <ServicesGrid />
-        </div>
-      </section>
 
       {/* Upcoming Events Section */}
       <section className="py-20 px-6">
