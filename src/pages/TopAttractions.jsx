@@ -8,7 +8,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import AttractionCard from '../components/attractions/AttractionCard';
 import EventCard from '../components/attractions/EventCard';
-import BoatingGallery from '../components/attractions/BoatingGallery';
+import ServicesGrid from '../components/attractions/ServicesGrid';
+import DarshanPooja from '../components/attractions/DarshanPooja';
 import { images } from '../assets';
 
 const attractions = [
@@ -166,7 +167,10 @@ export default function TopAttractions() {
         </div>
       </section>
 
-      {/* Boating Experience Section */}
+      {/* Darshan & Pooja Section */}
+      <DarshanPooja />
+
+      {/* Programs and Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -176,14 +180,14 @@ export default function TopAttractions() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Magical <span className="text-orange-600">Boat Rides</span>
+              Our Programs and <span className="text-orange-600">Services</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Experience the ghats from a different perspective
+              Discover our curated spiritual experiences and offerings
             </p>
           </motion.div>
 
-          <BoatingGallery images={boatingImages} />
+          <ServicesGrid />
         </div>
       </section>
 
