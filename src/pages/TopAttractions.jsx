@@ -49,6 +49,8 @@ const attractions = [
     significance: "The main cremation ghat, symbolizing the Hindu belief in moksha (liberation).",
     experience: "Spiritual insight into life and death rituals."
   },
+
+  
   {
     id: 5,
     title: "Sarnath",
@@ -58,6 +60,17 @@ const attractions = [
     highlight: "Dhamek Stupa, Archaeological Museum, and Ashoka Pillar.",
     location: "Around 10 km from Varanasi."
   }
+  ,
+  {
+  id: 6,
+  title: "Namo Ghat",
+  date: "Open Throughout the Year",
+  image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762951129/Namo_ghat_lwpmyd.mp4",
+  description: "A modern spiritual and cultural destination along the Ganges, Namo Ghat combines divinity with contemporary architecture. Its large sculptures of folded hands symbolize devotion and unity, making it one of Varanasi’s newest iconic ghats. Visitors come for peaceful Ganga views, yoga sessions, and evening aartis.",
+  location: "Near Ravidas Ghat, Varanasi, Uttar Pradesh",
+  time: "Best visited during sunrise or evening Ganga Aarti"
+}
+
 ];
 
 
@@ -81,8 +94,12 @@ const events = [
     description: "Grand celebration at Kashi Vishwanath Temple with special pujas, abhishekams, and all-night vigil.",
     location: "Kashi Vishwanath Temple",
     time: "All Day Event"
-  }
+  },
+  
 ];
+
+
+
 
 
 
