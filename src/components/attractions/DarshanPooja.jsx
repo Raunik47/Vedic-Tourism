@@ -40,52 +40,74 @@ function PoojaAccordionItem({ item, isOpen, onToggle }) {
   return (
     <div className="mb-6 relative">
       {/* Decorative Border */}
-      <div className="absolute inset-0 border-2 border-orange-100 opacity-50 rounded-lg"></div>
-      
-      <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 relative">
-        <button
-          className="w-full p-6 flex items-center justify-between hover:bg-orange-50/50 transition-colors duration-300 rounded-lg focus:outline-none group"
-          onClick={onToggle}
+      {/* Soft glowing border aura */}
+  <div className="absolute inset-0 border border-orange-200/40 rounded-2xl shadow-[0_0_40px_rgba(255,153,51,0.08)]"></div>
+
+  {/* Card Body */}
+  <div className="relative bg-white/70 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+    <button
+      className="w-full p-6 md:p-8 flex items-center justify-between hover:bg-orange-50/30 transition-colors duration-300 rounded-2xl focus:outline-none group"
+      onClick={onToggle}
+    >
+      {/* Left Section */}
+      <div className="flex items-center gap-6">
+        {/* Icon Circle */}
+        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-amber-200 flex items-center justify-center shadow-inner">
+          <div className="text-4xl transform group-hover:scale-110 transition-transform duration-300">🕉️</div>
+        </div>
+
+        {/* Text Section */}
+        <div className="text-left">
+          <h3 className="text-3xl font-semibold font-[Playfair_Display] text-gray-900 tracking-tight group-hover:text-orange-700 transition-colors duration-300">
+            {item.name}
+          </h3>
+
+          <div className="flex items-center gap-2 text-orange-700 mt-1">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <p className="font-medium text-[1rem] tracking-wide font-[Inter]">{item.time}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex items-center gap-6">
+        <div className="text-right">
+          <span className="block text-sm text-gray-500 font-[Inter]">Starting from</span>
+          <span className="text-3xl font-extrabold text-transparent bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text font-[Poppins]">
+            ₹{item.price}
+          </span>
+        </div>
+
+        {/* Arrow Icon */}
+        <div
+          className={`w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center transform transition-all duration-300 shadow-inner ${
+            isOpen ? 'rotate-180 bg-orange-200 scale-105' : ''
+          }`}
         >
-          <div className="flex items-center gap-6">
-            {/* Decorative Circle */}
-            <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center">
-              <div className="text-3xl transform group-hover:scale-110 transition-transform duration-300">🕉️</div>
-            </div>
-            <div className="text-left">
-              <h3 className="text-2xl font-serif text-gray-900">{item.name}</h3>
-              <div className="flex items-center gap-2 text-orange-700">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p className="font-medium">{item.time}</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="text-right">
-              <span className="block text-sm text-gray-500">Starting from</span>
-              <span className="text-2xl font-bold text-orange-600">₹{item.price}</span>
-            </div>
-            <div className={`w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center transform transition-transform duration-300 ${
-              isOpen ? 'rotate-180 bg-orange-200' : ''
-            }`}>
-              <svg
-                className="w-5 h-5 text-orange-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
+          <svg
+            className="w-5 h-5 text-orange-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </button>
+  
 
         <AnimatePresence>
           {isOpen && (
@@ -161,12 +183,12 @@ export default function DarshanPooja() {
         </div>
         
         {/* Mandala Corners */}
-        {/* <div className="absolute top-0 left-0 w-40 h-40 opacity-10 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-0 left-0 w-40 h-40 opacity-10 transform -translate-x-1/2 -translate-y-1/2">
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=" alt="" className="w-full h-full" />
         </div>
         <div className="absolute top-0 right-0 w-40 h-40 opacity-10 transform translate-x-1/2 -translate-y-1/2 rotate-90">
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=" alt="" className="w-full h-full" />
-        </div> */}
+        </div>
       </div>
 
       {/* Content Container with Sacred Border */}
@@ -186,15 +208,40 @@ export default function DarshanPooja() {
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-serif">
-            श्री दर्शन और <span className="text-orange-600">पूजा</span>
-          </h2>
-          <h3 className="text-2xl md:text-3xl text-gray-800 mb-4">
-            Darshan & Pooja
-          </h3>
-          <p className="text-xl text-gray-700">
-            Experience divine blessings through sacred rituals at Vishwanath Temple
-          </p>
+<div className="text-center my-12 px-4">
+  {/* Hindi Title */}
+  <h2
+    className="text-5xl md:text-6xl font-extrabold mb-4
+               bg-gradient-to-r from-orange-700 via-amber-500 to-yellow-400
+               bg-clip-text text-transparent drop-shadow-md
+               tracking-wide font-[Poppins]
+               leading-snug md:leading-tight pb-2"
+    style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+  >
+    <span className="inline-block align-middle">
+      श्री दर्शन और <span className="text-orange-600">पूजा</span>
+    </span>
+  </h2>
+
+  {/* English Subtitle */}
+  <h3
+    className="text-3xl md:text-4xl font-semibold text-gray-800
+               mb-3 font-[Playfair_Display] italic tracking-tight"
+  >
+    Darshan & Pooja
+  </h3>
+
+  {/* Description */}
+  <p
+    className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto
+               leading-relaxed font-[Inter]"
+  >
+    Experience divine tranquility and spiritual awakening through sacred rituals
+    at the <span className="text-orange-600 font-medium">Kashi Vishwanath Temple</span>.
+  </p>
+</div>
+
+
         </motion.div>
 
         <div className="max-w-3xl mx-auto">

@@ -65,7 +65,7 @@ const attractions = [
   id: 6,
   title: "Namo Ghat",
   date: "Open Throughout the Year",
-  image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762951129/Namo_ghat_lwpmyd.mp4",
+  image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762952817/Namo_ghat_ovuatk.mp4",
   description: "A modern spiritual and cultural destination along the Ganges, Namo Ghat combines divinity with contemporary architecture. Its large sculptures of folded hands symbolize devotion and unity, making it one of Varanasi’s newest iconic ghats. Visitors come for peaceful Ganga views, yoga sessions, and evening aartis.",
   location: "Near Ravidas Ghat, Varanasi, Uttar Pradesh",
   time: "Best visited during sunrise or evening Ganga Aarti"
