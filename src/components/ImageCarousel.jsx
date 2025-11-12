@@ -21,7 +21,7 @@ const images = [
   },
   {
     src: img2,
-    alt: "ishikesh Ganga Aarti",
+    alt: "Rishikesh Ganga Aarti",
     title: "Rishikesh Ganga Aarti",
     description: "Divine evening ceremony on the banks of Mother Ganga"
   },
@@ -50,7 +50,7 @@ export default function ImageCarousel() {
             clickable: true,
             dynamicBullets: true,
             renderBullet: function (index, className) {
-              return `<span class="${className} !w-2 !h-2 !bg-white/80 !opacity-60 hover:!opacity-100 !transition-all !duration-300"></span>`;
+              return `<span class="${className} w-2 h-2 bg-white/80 opacity-60 hover:opacity-100 transition-all duration-300"></span>`;
             }
           }}
           navigation={{
@@ -64,8 +64,8 @@ export default function ImageCarousel() {
           className="rounded-2xl shadow-xl relative group" // Reduced shadow and border radius
         >
           {/* Custom Navigation Buttons - Smaller */}
-          <div className="swiper-button-next !text-white !w-10 !h-10 !right-4 hover:!scale-110 !transition-transform !duration-300 after:!text-xl after:!font-bold group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
-          <div className="swiper-button-prev !text-white !w-10 !h-10 !left-4 hover:!scale-110 !transition-transform !duration-300 after:!text-xl after:!font-bold group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
+          <div className="swiper-button-next w-10 h-10 right-4 hover:scale-110 transition-transform duration-300 group-hover:opacity-100 opacity-0 text-white" />
+          <div className="swiper-button-prev w-10 h-10 left-4 hover:scale-110 transition-transform duration-300 group-hover:opacity-100 opacity-0 text-white" />
 
           {/* Parallax Background */}
           <div

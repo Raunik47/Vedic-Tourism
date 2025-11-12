@@ -1,7 +1,7 @@
 // src/components/HeroSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import video from "../assets/cover-video.mov";
+
 
 export default function HeroSection() {
   return (
@@ -15,7 +15,7 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src={video} type="video/mp4" />
+          <source src={"https://res.cloudinary.com/dht3z7n3m/video/upload/v1762926792/cover-video.mov_nuw4p2.mp4"} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

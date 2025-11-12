@@ -16,7 +16,7 @@ const attractions = [
     id: 1,
     title: "Kashi Vishwanath Temple",
     icon: "🕉️",
-    image: images.varanasi,
+    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762929803/StatusZons-Special-Kashi-Vishwanath-Status-Videos_stgo3d.mp4",
     significance: "One of the 12 Jyotirlingas of Lord Shiva.",
     highlight: "The main temple of Varanasi; gold-plated spire and sacred Ganga nearby.",
     experience: "Attend the Mangala Aarti or Rudrabhishek ritual."
@@ -25,7 +25,8 @@ const attractions = [
     id: 2,
     title: "Dashashwamedh Ghat",
     icon: "🌊",
-    image: images.varanasi,
+    image:" https://res.cloudinary.com/dht3z7n3m/video/upload/v1762931738/3741420463-preview_qgqc9e.mp4",
+
     significance: "The most spectacular and busiest ghat of Varanasi.",
     highlight: "Famous for the Ganga Aarti performed every evening with lamps, chants, and music.",
     experience: "Take a boat ride during sunrise or attend evening Aarti."
@@ -34,7 +35,8 @@ const attractions = [
     id: 3,
     title: "Assi Ghat",
     icon: "🕯️",
-    image: images.assiGhat,
+    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762948963/Assi_ghat_lnf2ad.mp4",
+
     significance: "Located where the Ganga meets the Assi River.",
     highlight: "Morning yoga sessions and peaceful environment.",
     experience: "Visit early morning for sunrise views and local breakfast nearby."
@@ -43,7 +45,7 @@ const attractions = [
     id: 4,
     title: "Manikarnika Ghat",
     icon: "🌅",
-    image: images.manikarnikaGhat,
+    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762949812/3809486043-preview_b0mtay.mp4",
     significance: "The main cremation ghat, symbolizing the Hindu belief in moksha (liberation).",
     experience: "Spiritual insight into life and death rituals."
   },
@@ -99,14 +101,27 @@ export default function TopAttractions() {
         >
           <SwiperSlide>
             <div className="relative h-full">
-              <img
-                src={images.varanasi}
-                alt="Varanasi Ghats"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <div className="max-w-4xl px-6">
+              {/* Video background - absolute to ensure perfect cover/alignment */}
+              <div className="absolute inset-0 overflow-hidden">
+                <video
+                  src="https://res.cloudinary.com/dht3z7n3m/video/upload/v1762929803/StatusZons-Special-Kashi-Vishwanath-Status-Videos_stgo3d.mp4"
+                  poster={images.varanasi}
+                  className="absolute inset-0 w-screen h-full object-cover"
+                  style={{ objectPosition: '50% 40%' }}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden="true"
+                />
+              </div>
+
+              {/* Dark overlay to keep content readable (slightly lighter to reveal more video) */}
+              <div className="absolute inset-0 bg-black/30 z-10" />
+
+              <div className="absolute inset-0 flex items-center justify-center text-white text-center z-20">
+                <div className="max-w-4xl px-6 pt-12"> {/* add top padding so text sits lower */}
                   <h1 className="text-5xl md:text-7xl font-bold mb-4">
                     Discover Varanasi
                   </h1>
