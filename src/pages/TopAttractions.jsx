@@ -61,7 +61,7 @@ const attractions = [
 ];
 
 
-// ........for up`coming events
+// .......for up`coming events
 
 const events = [
   {
