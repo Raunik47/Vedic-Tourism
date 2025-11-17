@@ -40,8 +40,8 @@ export default function Navbar() {
             </motion.span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation (visible on all sizes) */}
+          <div className="flex items-center space-x-4 md:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -58,82 +58,33 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 md:px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             >
               Book Now
             </motion.button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-700 hover:text-orange-500 focus:outline-none"
-            >
-              {isMobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+          
+          {/* removed hamburger toggle - navigation links are visible on mobile now */}
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}
-        initial="closed"
-        animate={isMobileMenuOpen ? "open" : "closed"}
-        variants={{
-          open: { opacity: 1, height: "auto" },
-          closed: { opacity: 0, height: 0 },
-        }}
-      >
-        <div className="px-4 pt-2 pb-4 space-y-1 bg-white/90 backdrop-blur-md border-t border-orange-100">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                location.pathname === item.path
-                  ? "bg-orange-100 text-orange-600"
-                  : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-              }`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <button className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300">
-            Book Now
-          </button>
+        {/* Mobile links repeated below to ensure they are easily tappable on small screens */}
+        <div className="md:hidden px-4 pb-2 bg-white/90 backdrop-blur-md border-t border-orange-100">
+          <div className="flex items-center justify-center gap-3">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm font-medium ${
+                  location.pathname === item.path
+                    ? "text-orange-600 font-semibold"
+                    : "text-gray-700 hover:text-orange-600"
+                } px-2 py-2`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
-      </motion.div>
     </nav>
   );
 }
