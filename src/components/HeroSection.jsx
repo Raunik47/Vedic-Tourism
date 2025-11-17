@@ -15,7 +15,7 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src={"https://res.cloudinary.com/dht3z7n3m/video/upload/v1762926792/cover-video.mov_nuw4p2.mp4"} type="video/mp4" />
+          <source src={"https://res.cloudinary.com/dht3z7n3m/video/upload/v1763028707/cover12_bi7mft.mp4"} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

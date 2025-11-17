@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import chardhamImg from '../assets/chardham.jpg';
+import varanasiImg from '../assets/varanasi.jpg';
+import rishikeshImg from '../assets/rishikesh.jpg';
+import sarnathImg from '../assets/sarnath.jpg';
 
 export function usePackages() {
   const [packages, setPackages] = useState([]);
@@ -16,7 +20,7 @@ export function usePackages() {
             duration: "12 Days",
             price: "₹45,999",
             originalPrice: "₹52,999",
-            image: "/src/assets/chardham.jpg",
+            image: chardhamImg,
             rating: 4.9,
             reviews: 1247,
             description: "Complete pilgrimage to four sacred shrines in the Himalayas",
@@ -36,7 +40,7 @@ export function usePackages() {
             duration: "5 Days",
             price: "₹22,999",
             originalPrice: "₹27,999",
-            image: "/src/assets/varanasi.jpg",
+            image: varanasiImg,
             rating: 4.8,
             reviews: 892,
             description: "Immerse in the spiritual capital of India",
@@ -56,7 +60,7 @@ export function usePackages() {
             duration: "7 Days",
             price: "₹28,999",
             originalPrice: "₹32,999",
-            image: "/src/assets/rishikesh.jpg",
+            image: rishikeshImg,
             rating: 4.7,
             reviews: 756,
             description: "Yoga and meditation in the world's yoga capital",
@@ -76,7 +80,7 @@ export function usePackages() {
             duration: "4 Days",
             price: "₹17,499",
             originalPrice: "₹21,999",
-            image: "/src/assets/prayagraj.jpg",
+            image: sarnathImg,
             rating: 4.8,
             reviews: 582,
             description: "Spiritual journey to the Triveni Sangam",

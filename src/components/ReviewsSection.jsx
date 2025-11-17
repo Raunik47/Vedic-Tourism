@@ -2,43 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-
-// Import client images
-import client1 from "../assets/client1.jpg";
-import client2 from "../assets/client2.jpg";
-import client3 from "../assets/client3.jpg";
- 
-
-const reviews = [
-  {
-    name: "Rajesh & Priya Sharma",
-    location: "Mumbai",
-    rating: 5,
-    image: client1,
-    package: "Char Dham Yatra",
-    review: "The Char Dham Yatra was a life-changing experience. The spiritual guides were incredibly knowledgeable, and every detail was perfectly arranged. We felt divine energy throughout the journey.",
-    highlights: ["Expert Guides", "Comfortable Stay", "Spiritual Atmosphere"]
-  },
-  {
-    name: "Dr. Arvind Patel",
-    location: "Delhi",
-    rating: 5,
-    image: client2,
-    package: "Varanasi Retreat",
-    review: "As a doctor, I was skeptical about spiritual tours, but Vedic Yatra changed my perspective. The Ganga Aarti experience brought tears to my eyes. Truly transformative!",
-    highlights: ["Ganga Aarti", "Cultural Immersion", "Well-organized"]
-  },
-  {
-    name: "Sunita & Family",
-    location: "Bangalore",
-    rating: 5,
-    image: client3,
-    package: "Family Pilgrimage",
-    review: "Traveling with our elderly parents was worry-free. The team took excellent care of everyone's needs. Our children learned so much about our culture and traditions.",
-    highlights: ["Family-friendly", "Elderly Care", "Educational"]
-  },
-
-];
+import { reviews } from "../data";
 
 const StarRating = ({ rating }) => {
   return (

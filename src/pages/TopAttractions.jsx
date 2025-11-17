@@ -9,99 +9,7 @@ import 'swiper/css/effect-fade';
 import AttractionCard from '../components/attractions/AttractionCard';
 import EventCard from '../components/attractions/EventCard';
 import DarshanPooja from '../components/attractions/DarshanPooja';
-import { images } from '../assets';
-
-const attractions = [
-  {
-    id: 1,
-    title: "Kashi Vishwanath Temple",
-    icon: "🕉️",
-    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762929803/StatusZons-Special-Kashi-Vishwanath-Status-Videos_stgo3d.mp4",
-    significance: "One of the 12 Jyotirlingas of Lord Shiva.",
-    highlight: "The main temple of Varanasi; gold-plated spire and sacred Ganga nearby.",
-    experience: "Attend the Mangala Aarti or Rudrabhishek ritual."
-  },
-  {
-    id: 2,
-    title: "Dashashwamedh Ghat",
-    icon: "🌊",
-    image:" https://res.cloudinary.com/dht3z7n3m/video/upload/v1762931738/3741420463-preview_qgqc9e.mp4",
-
-    significance: "The most spectacular and busiest ghat of Varanasi.",
-    highlight: "Famous for the Ganga Aarti performed every evening with lamps, chants, and music.",
-    experience: "Take a boat ride during sunrise or attend evening Aarti."
-  },
-  {
-    id: 3,
-    title: "Assi Ghat",
-    icon: "🕯️",
-    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762948963/Assi_ghat_lnf2ad.mp4",
-
-    significance: "Located where the Ganga meets the Assi River.",
-    highlight: "Morning yoga sessions and peaceful environment.",
-    experience: "Visit early morning for sunrise views and local breakfast nearby."
-  },
-  {
-    id: 4,
-    title: "Manikarnika Ghat",
-    icon: "🌅",
-    image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762949812/3809486043-preview_b0mtay.mp4",
-    significance: "The main cremation ghat, symbolizing the Hindu belief in moksha (liberation).",
-    experience: "Spiritual insight into life and death rituals."
-  },
-
-  
-  {
-    id: 5,
-    title: "Sarnath",
-    icon: "🏯",
-    image: images.sarnath,
-    significance: "Where Lord Buddha gave his first sermon after enlightenment.",
-    highlight: "Dhamek Stupa, Archaeological Museum, and Ashoka Pillar.",
-    location: "Around 10 km from Varanasi."
-  }
-  ,
-  {
-  id: 6,
-  title: "Namo Ghat",
-  date: "Open Throughout the Year",
-  image: "https://res.cloudinary.com/dht3z7n3m/video/upload/v1762952817/Namo_ghat_ovuatk.mp4",
-  description: "A modern spiritual and cultural destination along the Ganges, Namo Ghat combines divinity with contemporary architecture. Its large sculptures of folded hands symbolize devotion and unity, making it one of Varanasi’s newest iconic ghats. Visitors come for peaceful Ganga views, yoga sessions, and evening aartis.",
-  location: "Near Ravidas Ghat, Varanasi, Uttar Pradesh",
-  time: "Best visited during sunrise or evening Ganga Aarti"
-}
-
-];
-
-
-// .......for up`coming events
-
-const events = [
-  {
-    id: 1,
-    title: "Dev Deepawali",
-    date: "November 27, 2025",
-    image: images.devDeepawali,
-    description: "Witness the magical evening when all 88 ghats are illuminated with over a million earthen lamps. Special Ganga Aarti and cultural performances.",
-    location: "All Ghats of Varanasi",
-    time: "5:00 PM onwards"
-  },
-  {
-    id: 2,
-    title: "Maha Shivaratri",
-    date: "February 26, 2026",
-    image: images.shivaratri,
-    description: "Grand celebration at Kashi Vishwanath Temple with special pujas, abhishekams, and all-night vigil.",
-    location: "Kashi Vishwanath Temple",
-    time: "All Day Event"
-  },
-  
-];
-
-
-
-
-
+import { attractions, events } from '../data';
 
 export default function TopAttractions() {
   return (
@@ -118,27 +26,21 @@ export default function TopAttractions() {
         >
           <SwiperSlide>
             <div className="relative h-full">
-              {/* Video background - absolute to ensure perfect cover/alignment */}
+              {/* Background image */}
               <div className="absolute inset-0 overflow-hidden">
-                <video
-                  src="https://res.cloudinary.com/dht3z7n3m/video/upload/v1762929803/StatusZons-Special-Kashi-Vishwanath-Status-Videos_stgo3d.mp4"
-                  poster={images.varanasi}
+                <img
+                  src="https://res.cloudinary.com/dht3z7n3m/image/upload/v1762976685/about_us_background_f2unm0.jpg"
                   className="absolute inset-0 w-screen h-full object-cover"
-                  style={{ objectPosition: '50% 40%' }}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-hidden="true"
+                  style={{ objectPosition: '80% 30%' }}
+                  alt="Varanasi background"
                 />
               </div>
 
-              {/* Dark overlay to keep content readable (slightly lighter to reveal more video) */}
+              {/* Dark overlay to keep content readable */}
               <div className="absolute inset-0 bg-black/30 z-10" />
 
               <div className="absolute inset-0 flex items-center justify-center text-white text-center z-20">
-                <div className="max-w-4xl px-6 pt-12"> {/* add top padding so text sits lower */}
+                <div className="max-w-4xl px-6 pt-12">
                   <h1 className="text-5xl md:text-7xl font-bold mb-4">
                     Discover Varanasi
                   </h1>
@@ -149,7 +51,6 @@ export default function TopAttractions() {
               </div>
             </div>
           </SwiperSlide>
-          {/* Add more slides */}
         </Swiper>
       </div>
 

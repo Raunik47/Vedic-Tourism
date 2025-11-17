@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Booking() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     packageType: '',
     startDate: '',
@@ -32,12 +33,20 @@ export default function Booking() {
     // Add booking submission logic here
     setTimeout(() => {
       setIsSubmitting(false);
-      navigate('/booking-confirmation');
-    }, 2000);
+      // navigate to confirmation page with booking data
+      navigate('/booking-confirmation', { state: { booking: formData } });
+    }, 1200);
   };
 
   const nextStep = () => setCurrentStep(prev => prev + 1);
   const prevStep = () => setCurrentStep(prev => prev - 1);
+
+  useEffect(() => {
+    // Prefill package if navigated from a package card
+    if (location && location.state && location.state.packageName) {
+      setFormData(prev => ({ ...prev, packageType: location.state.packageName }));
+    }
+  }, [location]);
 
   return (
     <div className="pt-16 min-h-screen bg-gradient-to-b from-amber-50 to-white">
@@ -186,7 +195,7 @@ export default function Booking() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
+                    Email Address (optional)
                   </label>
                   <input
                     type="email"
@@ -194,7 +203,6 @@ export default function Booking() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   />
                 </div>

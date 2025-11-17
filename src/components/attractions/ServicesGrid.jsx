@@ -5,37 +5,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-const servicesList = [
-  {
-    id: 1,
-    title: "Temple Tours",
-    icon: "🕉️",
-    description: "Guided visits to sacred temples with expert explanations of rituals and traditions",
-    features: ["Expert spiritual guides", "Traditional ritual participation", "Sacred history insights"]
-  },
-  {
-    id: 2,
-    title: "Ganga Aarti Experience",
-    icon: "🪔",
-    description: "VIP arrangements for the divine Ganga Aarti ceremony with special seating",
-    features: ["Premium viewing location", "Traditional prasad", "Cultural explanation"]
-  },
-  {
-    id: 3,
-    title: "Spiritual Retreats",
-    icon: "🧘",
-    description: "Immersive spiritual experiences including meditation and yoga sessions",
-    features: ["Meditation sessions", "Yoga classes", "Spiritual discussions"]
-  },
-  {
-    id: 4,
-    title: "Sacred Boat Tours",
-    icon: "🚣",
-    description: "Morning and evening boat rides along the sacred Ganges with cultural commentary",
-    features: ["Sunrise/Sunset tours", "Cultural storytelling", "Photography opportunities"]
-  }
-];
+import { servicesList } from '../../data';
 
 export default function ServicesGrid() {
   return (
