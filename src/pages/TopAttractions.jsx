@@ -11,6 +11,7 @@ import EventCard from '../components/attractions/EventCard';
 import DarshanPooja from '../components/attractions/DarshanPooja';
 import { attractions, events } from '../data';
 
+
 export default function TopAttractions() {
   return (
     <div className="pt-16 min-h-screen bg-gradient-to-b from-amber-50 to-white">

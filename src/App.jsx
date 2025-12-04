@@ -7,6 +7,7 @@ import ErrorFallback from "./components/common/ErrorFallback";
 import Navbar from "./components/common/Navbar";
 import ScrollToTop from "./components/common/ScrollToTop";
 import Footer from "./components/common/Footer";
+import FloatingActionButtons from "./components/common/FloatingActionButtons";
 
 // Lazy load pages for better performance
 const Home = React.lazy(() => import("./pages/Home"));
@@ -39,6 +40,7 @@ export default function App() {
               </Routes>
             </Suspense>
           </main>
+          <FloatingActionButtons />
           <Footer />
         </div>
       </BrowserRouter>
